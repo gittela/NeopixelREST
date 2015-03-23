@@ -43,7 +43,7 @@ number = client.parseInt();
 
 if (client.read() == '/') {
   color = client.parseInt();
-  if (color == 10){
+  if (color == 1){
     leds[number] = CRGB::Red;
   }
   else if (color == 2){
@@ -57,12 +57,9 @@ if (client.read() == '/') {
 
 // Send feedback to client
 client.print(("Node ") + (String)number + (" set to ") + color);
-/*client.print(number);
-//client.print((" set to ")+color);
-client.println(color);
 
 // Update datastore key with the current pin value
-String key = "D";
+/*String key = "D";
 key += number;
 Bridge.put(key, String(color));*/
 }
