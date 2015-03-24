@@ -28,46 +28,6 @@ void loop() {
 	delay(50);
 }
 void process(YunClient client) {
-<<<<<<< HEAD
-	// read the command
-	String command = client.readStringUntil('/');
-
-	if (command == "node") {
-		nodeCommand(client);
-	}
-}
-void nodeCommand(YunClient client) {
-	int number, color;
-	// Read node number
-	number = client.parseInt();
-
-	if (client.read() == '/') {
-		color = client.parseInt();
-		if (color == 0) {
-			leds[number] = CRGB::White;
-		} else if (color == 1) {
-			leds[number] = CRGB::Purple;
-		} else if (color == 2) {
-			leds[number] = CRGB::DeepSkyBlue;
-		} else if (color == 3) {
-			leds[number] = CRGB::LimeGreen;
-		} else if (color == 4) {
-			leds[number] = CRGB::Yellow;
-		} else if (color == 5) {
-			leds[number] = CRGB::Orange;
-		} else if (color == 6) {
-			leds[number] = CRGB::Red;
-		} else if (color == 7) {
-			leds[number] = CRGB::Black;
-		}
-		FastLED.show();
-	}
-
-	// Send feedback to client
-	client.print(("Node ") + (String) number + (" set to ") + color);
-
-	// Update datastore key with the current pin value
-=======
 // read the command
 	String command = client.readStringUntil('/');
 
@@ -96,7 +56,6 @@ void nodeCommand(YunClient client) {
 	client.print(("Node ") + (String) number + (" set to ") + color);
 
 // Update datastore key with the current pin value
->>>>>>> branch 'master' of https://github.com/gittela/NeopixelREST.git
 	/*String key = "D";
 	 key += number;
 	 Bridge.put(key, String(color));*/
