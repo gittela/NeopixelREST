@@ -41,13 +41,22 @@ void nodeCommand(YunClient client) {
 	number = client.parseInt();
 
 	if (client.read() == '/') {
-		color = client.parseInt();
-		if (color == 1) {
-			leds[number] = CRGB::Red;
+		if (color == 0) {
+			leds[number] = CRGB::White;
+		} else if (color == 1) {
+			leds[number] = CRGB::Purple;
 		} else if (color == 2) {
-			leds[number] = CRGB::Blue;
+			leds[number] = CRGB::DeepSkyBlue;
 		} else if (color == 3) {
-			leds[number] = CRGB::Green;
+			leds[number] = CRGB::LimeGreen;
+		} else if (color == 4) {
+			leds[number] = CRGB::Yellow;
+		} else if (color == 5) {
+			leds[number] = CRGB::Orange;
+		} else if (color == 6) {
+			leds[number] = CRGB::Red;
+		} else if (color == 7) {
+			leds[number] = CRGB::Black;
 		}
 		FastLED.show();
 	}
