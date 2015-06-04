@@ -41,6 +41,7 @@ void nodeCommand(YunClient client) {
 	number = client.parseInt();
 
 	if (client.read() == '/') {
+		color = client.parseInt();
 		if (color == 0) {
 			leds[number] = CRGB::White;
 		} else if (color == 1) {
